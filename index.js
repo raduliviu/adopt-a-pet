@@ -1,7 +1,10 @@
 const express = require("express")
 const pets = require("./pets")
+const path = require('path')
 const app = express()
 const port = process.env.PORT || 5000
+
+app.use(express.static(path.join(__dirname)))
 
 app.get('/', (req, res) => res.send(`
     <h1>Adopt a Pet!</h1>
